@@ -48,9 +48,6 @@ class Course {
                         reject(err)
                     } else {
                         resolve(JSON.parse(content))
-
-
-
                     }
                 }
             )
