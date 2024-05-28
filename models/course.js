@@ -40,16 +40,19 @@ class Course {
 
     static getAll() {
         return new Promise((resolve, reject) => {
-            fs.readFile(path.join(__dirname, '..', 'data', 'courses.json'), 'utf8',
+            fs.readFile(
+                path.join(__dirname, '..', 'data', 'courses.json'),
+                'utf8',
                 (err, content) => {
-                if (err) {
-                    reject(err)
-                }else {
-                    resolve(JSON.parse(content))
+                    if (err) {
+                        reject(err)
+                    } else {
+                        resolve(JSON.parse(content))
+                    }
                 }
-            })
+            )
         })
     }
 }
 
-module.exports = Course;
+module.exports = Course
