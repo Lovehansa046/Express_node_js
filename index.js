@@ -17,17 +17,30 @@ app.use(express.static('public'))
 
 app.get('/', (req, res) => {
     // res.sendFile(path.join(__dirname, 'views', 'view/index.html'))
-    res.render('index')
+    res.render('index', {
+        title: 'Главная страница',
+        isHome: true
+    })
 })
 
-app.get('/about', (req, res) => {
+app.get('/add', (req, res) => {
     // res.sendFile(path.join(__dirname, 'views', 'view/about.html'))
-    res.render('about')
+    res.render('add', {
+        title: 'Добавить курс',
+        isAdd: true
+    })
+})
+
+app.get('/courses', (req, res) => {
+    res.render('courses', {
+        title: 'Курсы',
+        isCourse: true
+    })
 })
 
 
 const PORT = process.env.PORT || 3000
 
-app.listen(PORT, () =>{
+app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`)
 })
