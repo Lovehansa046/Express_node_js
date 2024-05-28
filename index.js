@@ -14,6 +14,7 @@ app.set('view engine', 'hbs')
 app.set('views', 'views')
 
 app.use(express.static('public'))
+app.use(express.urlencoded({extended: true}))
 
 // app.get('/', (req, res) => {
 //     // res.sendFile(path.join(__dirname, 'views', 'view/index.html'))
