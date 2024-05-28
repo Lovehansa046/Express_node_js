@@ -50,7 +50,7 @@ The application will be running on `http://localhost:3000`.
 
 ## Jira Board
 
-For project management and issue tracking, visit the [Jira board]([http://your-jira-board-link](https://lovehansa046.atlassian.net/jira/software/projects/EX/boards/7/timeline)).
+For project management and issue tracking, visit the [Jira board](https://lovehansa046.atlassian.net/jira/software/projects/EX/boards/7/timeline).
 
 ---
 
