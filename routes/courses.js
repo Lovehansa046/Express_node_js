@@ -1,11 +1,13 @@
 const {Router} = require("express");
 const router = Router();
+const Course = require("../models/course");
 
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
+    const courses = await Course.getAll()
     res.render('courses', {
         title: 'Курсы',
-        isCourse: true
+        isCourse: true, courses
     })
 })
 
-module.exports = router
+// module.exports = router
