@@ -1,1 +1,17 @@
-{"courses":[{"_id":"66661656d420f57d8ee666e7","title":"рноп","price":456456,"img":"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.instagram.com%2Fredarena.ru%2Fp%2FC629SqJIXVY%2F&psig=AOvVaw0cHeev4Yxg9J3Gth1vXs38&ust=1718051804050000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCMj9yc-zz4YDFQAAAAAdAAAAABAE"},{"_id":"66661656d420f57d8ee666e7","title":"рноп","price":456456,"img":"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.instagram.com%2Fredarena.ru%2Fp%2FC629SqJIXVY%2F&psig=AOvVaw0cHeev4Yxg9J3Gth1vXs38&ust=1718051804050000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCMj9yc-zz4YDFQAAAAAdAAAAABAE"}],"price":912912}
+{
+  "courses": [
+    {
+      "_id": "66661656d420f57d8ee666e7",
+      "title": "рноп",
+      "price": 456456,
+      "img": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.instagram.com%2Fredarena.ru%2Fp%2FC629SqJIXVY%2F&psig=AOvVaw0cHeev4Yxg9J3Gth1vXs38&ust=1718051804050000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCMj9yc-zz4YDFQAAAAAdAAAAABAE"
+    },
+    {
+      "_id": "66661656d420f57d8ee666e7",
+      "title": "рноп",
+      "price": 456456,
+      "img": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.instagram.com%2Fredarena.ru%2Fp%2FC629SqJIXVY%2F&psig=AOvVaw0cHeev4Yxg9J3Gth1vXs38&ust=1718051804050000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCMj9yc-zz4YDFQAAAAAdAAAAABAE"
+    }
+  ],
+  "price": 912912
+}
