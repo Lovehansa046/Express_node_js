@@ -1,55 +1,54 @@
-const express = require('express')
-const path = require('path')
-const exphbs = require('express-handlebars')
-const homeRoutes = require('./routes/home')
-const cardRoutes = require('./routes/card')
-const addRoutes = require('./routes/add')
-const coursesRoutes = require('./routes/courses')
+const express = require('express');
+const path = require('path');
+const mongoose = require('mongoose');
+const exphbs = require('express-handlebars');
+const Handlebars = require('handlebars');
+// npm install @handlebars/allow-prototype-access
+const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access');
 
-const app = express()
+const homeRoutes = require('./routes/home');
+const cardRoutes = require('./routes/card');
+const addRoutes = require('./routes/add');
+const coursesRoutes = require('./routes/courses');
+
+const app = express();
 
 const hbs = exphbs.create({
-    defaultLayout: 'main',
-    extname: 'hbs'
-})
+  defaultLayout: 'main',
+  extname: 'hbs',
+  handlebars: allowInsecurePrototypeAccess(Handlebars)
+});
 
-app.engine('hbs', hbs.engine)
-app.set('view engine', 'hbs')
-app.set('views', 'views')
+app.engine('hbs', hbs.engine);
 
-app.use(express.static(path.join(__dirname, 'public')))
-app.use(express.urlencoded({extended: true}))
+app.set('view engine', 'hbs');
+app.set('views', 'views');
 
-// app.get('/', (req, res) => {
-//     // res.sendFile(path.join(__dirname, 'views', 'view/index.html'))
-//     res.render('index', {
-//         title: 'Главная страница',
-//         isHome: true
-//     })
-// })
-//
-// app.get('/add', (req, res) => {
-//     // res.sendFile(path.join(__dirname, 'views', 'view/about.html'))
-//     res.render('add', {
-//         title: 'Добавить курс',
-//         isAdd: true
-//     })
-// })
-//
-// app.get('/courses', (req, res) => {
-//     res.render('courses', {
-//         title: 'Курсы',
-//         isCourse: true
-//     })
-// })
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.urlencoded({ 
+    extended: true 
+}));
 
-app.use('/', homeRoutes)
-app.use('/add', addRoutes)
-app.use('/courses', coursesRoutes)
-app.use('/card', cardRoutes)
+app.use('/', homeRoutes);
+app.use('/add', addRoutes);
+app.use('/courses', coursesRoutes);
+app.use('/card', cardRoutes);
 
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`)
-})
+async function start() {
+  try {
+    const url = 'mongodb+srv://artjomplotnikovivkhk:Dmy1Vyf5E6weuzwN@cluster0.35obbyv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
+    await mongoose.connect(url, {
+      useNewUrlParser: true,
+      
+    });
+    app.listen(PORT, () => {
+      console.log(`Server is running on port ${PORT}`);
+    });
+  } catch (error) {
+    console.error('Error connecting to MongoDB', error);
+  }
+}
+
+start();
