@@ -47,36 +47,27 @@ app.set('views', 'views');
 
 app.use(middleware.handle(i18next));
 app.use(cookieParser());
-
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
+
+app.post('/setlang', (req, res) => {
+    const lang = req.query.lang || 'en'; // Получаем выбранный язык из параметра запроса
+    res.cookie('i18next', lang, { maxAge: 900000, httpOnly: true }); // Сохраняем язык в куки
+    res.status(200).send(); // Отправляем ответ об успешной смене языка
+});
+
+app.use((req, res, next) => {
+    const lang = req.cookies.i18next || 'en'; // Получаем язык из куки или используем 'en' по умолчанию
+    req.i18n.changeLanguage(lang); // Устанавливаем язык в i18next
+    next();
+});
 
 app.use('/', homeRoutes);
 app.use('/add', addRoutes);
 app.use('/courses', coursesRoutes);
 app.use('/card', cardRoutes);
 
-app.post('/setlang', (req, res) => {
-    const lang = req.query.lang || 'ru'; // Получаем выбранный язык из параметра запроса
-    i18next.options.fallbackLng = lang; // Устанавливаем новое значение для fallbackLng
-
-    // Отправляем выбранный язык в куки
-    res.cookie('lang', lang, { expires: new Date(Date.now() + 900000), httpOnly: true });
-
-    res.status(200).send(); // Отправляем ответ об успешной смене языка
-});
-
-app.use((req, res, next) => {
-    const lang = req.cookies.lang || 'ru'; // Получаем язык из куки или устанавливаем 'ru' по умолчанию
-    i18next.options.fallbackLng = lang; // Устанавливаем язык в i18next
-    next();
-});
-
-
-
 const PORT = process.env.PORT || 3000;
-
-
 
 async function start() {
     try {
