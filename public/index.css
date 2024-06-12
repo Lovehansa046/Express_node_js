@@ -31,3 +31,19 @@
     align-items: center;
     justify-content: space-between;
 }
+
+.lang {
+    width: 60px;
+    height: 30px;
+    border-radius: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+    color: black;
+    border: white;
+
+}
+
+.lang:hover {
+    background: black;
+    color: white;
+}
