@@ -1,5 +1,4 @@
 
-
 const toCurrency = price => {
     return new Intl.NumberFormat('en-EN', {
         currency: 'EUR',

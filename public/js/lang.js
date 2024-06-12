@@ -1,30 +1,20 @@
+// Функция для установки куки
+function setCookie(name, value, days) {
+    var expires = "";
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "") + expires + "; path=/";
+}
+
+// Функция для установки языка
 function setLanguage(lang) {
-    // Сохраняем выбранный язык в куки
-    document.cookie = `i18next=${lang};expires=Thu, 31 Dec 2099 23:59:59 UTC;path=/`;
+    // Устанавливаем куку "language" с выбранным языком на 30 дней
+    setCookie('language', lang, 30);
 
-    // Отправка AJAX-запроса на сервер для смены языка
-    fetch(`/setlang?lang=${lang}`, { method: 'POST' })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Failed to set language');
-            }
-            // Перезагрузка страницы после успешной установки языка
-            location.reload();
-        })
-        .catch(error => {
-            console.error('Error setting language:', error);
-        });
+    // Здесь можно добавить логику для изменения языка на странице, если это необходимо
+    // Например, можно перезагрузить страницу для применения нового языка
+    window.location.reload();
 }
-
-// Функция для получения значения куки по имени
-function getCookie(name) {
-    const value = `; ${document.cookie}`;
-    const parts = value.split(`; ${name}=`);
-    if (parts.length === 2) return parts.pop().split(';').shift();
-}
-
-// Устанавливаем язык страницы при загрузке
-document.addEventListener("DOMContentLoaded", () => {
-    const lang = getCookie('i18next') || 'en'; // Получаем язык из куки или используем 'en' по умолчанию
-    console.log(`Current language: ${lang}`);
-});
