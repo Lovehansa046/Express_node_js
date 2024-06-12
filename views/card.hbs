@@ -1,0 +1,29 @@
+<h1 id="cartHeader">{{t 'cart__card'}}</h1>
+
+<div id="card">
+    {{#if courses.length}}
+        <table>
+            <thead>
+            <tr>
+                <th id="cartCourseTitle">{{t 'course_title_card'}}</th>
+                <th id="cartCourseCount">{{t 'course_count'}}</th>
+                <th id="cartCourseActions">{{t 'course_actions'}}</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#each courses}}
+                <tr>
+                    <td>{{title}}</td>
+                    <td>{{count}}</td>
+                    <td>
+                        <button class="btn btn-small js-remove" data-id="{{id}}" id="removeButton">{{t 'remove'}}</button>
+                    </td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+        <p><strong id="cartTotalPriceLabel">{{t 'total_price'}}:</strong> <span class="price" id="cartTotalPrice">{{price}}</span></p>
+    {{else}}
+        <p id="cartEmpty">{{t 'cart_empty'}}</p>
+    {{/if}}
+</div>

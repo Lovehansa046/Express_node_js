@@ -1,0 +1,40 @@
+{
+  "app_name": "Course Application",
+  "home": "Home",
+  "courses": "Courses",
+  "add_course": "Add Course",
+  "cart": "Cart",
+
+  "add_course_header": "Add Course",
+  "course_title": "Course Title",
+  "enter_title": "Enter the title",
+  "course_price": "Course Price",
+  "enter_price": "Enter the price",
+  "course_image_url": "Course Image URL",
+  "enter_image_url": "Enter the image URL",
+  "add_course_button": "Add Course",
+
+  "cart__card": "Cart",
+  "course_title_card": "Title",
+  "course_count": "Count",
+  "course_actions": "Actions",
+  "remove": "Remove",
+  "total_price": "Total Price",
+  "cart_empty": "Cart is empty",
+
+  "edit": "Edit",
+  "course_title_edit": "Course Title",
+  "enter_title_edit": "Enter the title",
+  "course_price_edit": "Course Price",
+  "enter_price_edit": "Enter the price",
+  "img_url": "Image URL",
+  "enter_img_url": "Enter the image URL",
+  "edit_course": "Edit Course",
+
+  "open_course": "Open Course",
+  "buy": "Buy",
+  "no_courses": "No courses available",
+  "Welcome": "You are Welcome",
+  "text_welcome": "Here are only the best courses"
+}
+

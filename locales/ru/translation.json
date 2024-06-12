@@ -1,0 +1,40 @@
+{
+  "app_name": "Приложение курсов",
+  "home": "Главная",
+  "courses": "Курсы",
+  "add_course": "Добавить курс",
+  "cart": "Корзина",
+
+  "add_course_header": "Добавить курс",
+  "course_title": "Название курса",
+  "enter_title": "Введите название",
+  "course_price": "Цена курса",
+  "enter_price": "Введите цену",
+  "course_image_url": "URL картинки",
+  "enter_image_url": "Введите URL картинки",
+  "add_course_button": "Добавить курс",
+
+  "cart__card": "Корзина",
+  "course_title_card": "Название",
+  "course_count": "Количество",
+  "course_actions": "Действия",
+  "remove": "Удалить",
+  "total_price": "Цена",
+  "cart_empty": "Корзина пуста",
+
+  "edit": "Редактировать",
+  "course_title_edit": "Название курса",
+  "enter_title_edit": "Введите название",
+  "course_price_edit": "Цена курса",
+  "enter_price_edit": "Введите цену",
+  "img_url": "URL картинки",
+  "enter_img_url": "Введите URL картинки",
+  "edit_course": "Редактировать курс",
+
+  "open_course": "Открыть курс",
+  "buy": "Купить",
+  "no_courses": "Курсов пока нет",
+
+  "Welcome": "Добро пожаловать",
+  "text_welcome": "Здесь только лучшие курсы"
+}

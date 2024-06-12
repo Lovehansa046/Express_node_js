@@ -1,0 +1,23 @@
+<h1 id="addCourseHeader">{{t 'add_course_header'}}</h1>
+
+<form action="/add" method="POST">
+    <div class="input-field">
+        <input id="title" name="title" type="text" class="validate" required>
+        <label for="title" id="titleLabel">{{t 'course_title'}}</label>
+        <span class="helper-text" data-error="{{t 'enter_title'}}" id="titleHelper"></span>
+    </div>
+
+    <div class="input-field">
+        <input id="price" name="price" type="number" class="validate" required min="1">
+        <label for="price" id="priceLabel">{{t 'course_price'}}</label>
+        <span class="helper-text" data-error="{{t 'enter_price'}}" id="priceHelper"></span>
+    </div>
+
+    <div class="input-field">
+        <input id="img" name="img" type="text" class="validate" required>
+        <label for="img" id="imgLabel">{{t 'course_image_url'}}</label>
+        <span class="helper-text" data-error="{{t 'enter_image_url'}}" id="imgHelper"></span>
+    </div>
+
+    <button class="btn btn-primary" id="submitButton">{{t 'add_course_button'}}</button>
+</form>
