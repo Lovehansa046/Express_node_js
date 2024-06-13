@@ -43,7 +43,14 @@
 
 }
 
-.lang:hover {
-    background: black;
+.lang-rus:hover {
+    background-image: url('img/Rus.png');
+    background-size: cover;
+    color: black;
+}
+
+.lang-eng:hover {
+    background-image: url('img/ENG.jpg');
+    background-size: cover;
     color: white;
 }
